@@ -14,10 +14,10 @@ export default class BottomNavigatonComponent extends React.Component {
   state = {
     index: 0,
     routes: [
-      { key: 'state', title: 'Noticias', icon: 'queue-music' },
+      { key: 'state', title: 'Noticias', icon: 'queue-music', color: '#3F51B5'},
       { key: 'client', title: 'Client', icon: 'album' },
-      { key: 'setting', title: 'Setting', icon: 'album' },
-      { key: 'logout', title: 'Logout', icon: 'album' },
+      { key: 'setting', title: 'Setting', icon: 'album',color: '#009688' },
+      { key: 'logout', title: 'Logout', icon: 'album', color: '#607D8B'},
     ],
   };
 
@@ -36,7 +36,7 @@ export default class BottomNavigatonComponent extends React.Component {
     return (
       <BottomNavigation style={{
           textAlign:'center',
-          backgroundColor:'Red',
+          color:'Red',
           fontSize:'30dp'
         }}
         navigationState={this.state}
