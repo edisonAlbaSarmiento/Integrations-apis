@@ -13,7 +13,8 @@ import {
   WrapperDetail,
   WrapperImage,
   WrapperInfo,
-  TextDetail
+  TextDetail,
+  TexData
 } from './style';
 
 const API_KEY = 'be24a9ddbeef234696f2fc061ac46c76';
@@ -124,7 +125,9 @@ export default class News extends Component {
                         <TitleMovie>{movie.title}</TitleMovie>
                       </WrapperImage>
                       <WrapperInfo>
-                        <TextDetail>{movie.overview}</TextDetail>
+                        <TextDetail numberOfLines={12}>{movie.overview}</TextDetail>
+                        <TexData>Promedio de votos: {movie.vote_average}</TexData>
+                        <TexData>Fecha de salida: {movie.release_date}</TexData>
                       </WrapperInfo>
                     </WrapperDetail>
                   )

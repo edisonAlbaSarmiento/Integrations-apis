@@ -99,3 +99,11 @@ export const TextDetail = styled.Text`
   color: #fff;
   text-align: justify
 `;
+
+export const TexData = styled.Text`
+  font-size: 14px;
+  color: #fff;
+  text-align: justify;
+  font-weight: bold;
+  margin: 4px;
+`;
