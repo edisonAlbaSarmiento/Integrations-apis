@@ -76,10 +76,16 @@ export default class News extends Component {
 
   onFilterCategory = id => {
     const { movies } = this.state;
+    const listNew = [];
     if (id > 0) {
-      const filter = movies.results.filter(movie => movie.genre_ids == id);
-      console.log('ESTA NINI', filter);
-      this.setState({ filterMovies: { results: filter } });
+      movies.results.map(movie => {
+        const filter = movie.genre_ids.find(genre => genre == id);
+        if (filter !== undefined) {
+          movie.genre_ids.push(filter);
+          listNew.push(movie);
+        }
+      });
+      this.setState({ filterMovies: { results: listNew } });
     } else {
       this.setState({ filterMovies: movies });
     }
@@ -126,7 +132,7 @@ export default class News extends Component {
                       </WrapperImage>
                       <WrapperInfo>
                         <TextDetail numberOfLines={12}>{movie.overview}</TextDetail>
-                        <TexData>Promedio de votos: {movie.vote_average}</TexData>
+                        <TexData>Puntuación de usario: {movie.vote_average}%</TexData>
                         <TexData>Fecha de salida: {movie.release_date}</TexData>
                       </WrapperInfo>
                     </WrapperDetail>
